@@ -262,11 +262,12 @@ public class Schema2 {
 	 /////////////////////////////////////////////// Data Population Methods //////////////////////////////////////////////////////////////
 	 @SuppressWarnings("deprecation")
 	public static void populateEmployee(Connection conn) {
-		 for (int i = 1; i < 10000; i++) {
+		 for (int i = 1; i <= 16000; i++) {
                 String result = "M";
                 if (i > 5000) 
                 	result = "F";
-				if (insertEmployee("Employee" + i, "M" + i,"Employee" + i, i, new Date(22,1,1999), "address" + i ,result,i,i,i, conn) == 0) {
+				if (insertEmployee("Employee" + i, "M" + i,"Employee" + i, i, new Date(22,1,1999), "address" + i
+                        ,result,i,i,i, conn) == 0) {
 					System.err.println("insertion of record " + i + " failed");
 					break;
 				} else
@@ -281,7 +282,7 @@ public class Schema2 {
 	 
 	 @SuppressWarnings("deprecation")
 	public static void populateDepartment(Connection conn) {
-		 for (int i = 1; i < 10000; i++) {
+		 for (int i = 1; i <= 150; i++) {
 				if (insertDepartment("Department" + i, i,i,new Date(1,1,1990), conn) == 0) {
 					System.err.println("insertion of record " + i + " failed");
 					break;

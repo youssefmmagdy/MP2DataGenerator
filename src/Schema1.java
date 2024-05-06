@@ -423,7 +423,7 @@ public class Schema1 {
 	// ///////////////////////////////////////// Data Population Method
 	// //////////////////////////////////////////////////////
 	public static void populateDepartment(Connection conn) {
-		for (int i = 1; i < 10000; i++) {
+		for (int i = 1; i <= 60; i++) {
 
 			if (insertDepartment(i, "CS" + i, i, conn) == 0) {
 				System.err.println("insertion of record " + i + " failed");
@@ -434,7 +434,7 @@ public class Schema1 {
 	}
 
 	public static void populateInstructor(Connection conn) {
-		for (int i = 1; i < 10000; i++) {
+		for (int i = 1; i <= 30; i++) {
 			if (insertInstructor(i, "Name" + i, i, "CS" + i, conn) == 0) {
 				System.err.println("insertion of record " + i + " failed");
 				break;
@@ -444,7 +444,7 @@ public class Schema1 {
 	}
 
 	public static void populateClassroom(Connection conn) {
-		for (int i = 1; i < 10000; i++) {
+		for (int i = 1; i <= 60; i++) {
 			if (insertClassroom(i, i, 100 + i, conn) == 0) {
 				System.err.println("insertion of record " + i + " failed");
 				break;
@@ -466,8 +466,8 @@ public class Schema1 {
 	}
 
 	public static void populateStudent(Connection conn) {
-		for (int i = 1; i < 10000; i++) {
-			if (insertStudent(i, "name" + i, i, "CS" + i, i, conn) == 0) {
+		for (int i = 1; i <= 1100; i++) {
+			if (insertStudent(i, "name" + i, ((i%40)+1), "CS" + ((i%60)+1), ((i%30)+1), conn) == 0) {
 				System.err.println("insertion of record " + i + " failed");
 				break;
 			} else
@@ -476,8 +476,8 @@ public class Schema1 {
 	}
 
 	public static void populateCourse(Connection conn) {
-		for (int i = 1; i < 10000; i++) {
-			if (insertCourse(i, "CSEN" + i, i, "CS" + i, conn) == 0) {
+		for (int i = 1; i <= 30; i++) {
+			if (insertCourse(i, "CSEN" + i, (i%8)+1, "CS" + i, conn) == 0) {
 				System.err.println("insertion of record " + i + " failed");
 				break;
 			} else
@@ -498,7 +498,7 @@ public class Schema1 {
 	public static void populateSection(Connection conn) {
 		int j = 1;
 		for (int i = 1; i < 10000; i++) {
-			if (insertSection(i, i, 2019, i, i, j, j, conn) == 0) {
+			if (insertSection(i, 1, 2024, ((i%30)+1), (i%30)+1, (j%60)+1, (j%60)+1, conn) == 0) {
 				System.err.println("insertion of record " + i + " failed");
 				break;
 			} else
@@ -509,7 +509,7 @@ public class Schema1 {
 
 	public static void populateTakes(Connection conn) {
 		double j = 0.7;
-		for (int i = 1; i < 10000; i++) {
+		for (int i = 1; i <= 1100; i++) {
 			if (j == 5)
 				j = 0.7;
 			if (insertTakes(i, i, j, conn) == 0) {

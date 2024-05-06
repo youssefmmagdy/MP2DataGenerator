@@ -371,7 +371,7 @@ public class Schema4 {
 	////////////////////////////////////////////////////////// Data Population Methods ////////////////////////////////////////////////////////// 
 	 @SuppressWarnings("deprecation")
 	public static void populateMovie(Connection conn) {
-		 for (int i = 1; i < 10000; i++) {
+		 for (int i = 1; i <= 100000; i++) {
 
 				if (insertMovie(i, "Movie" + i,i, i, "EN", new Date(22,1,1999), "US", conn) == 0) {
 					System.err.println("insertion of record " + i + " failed");
@@ -382,7 +382,7 @@ public class Schema4 {
 	 }
 	 
 		public static void populateReviewer(Connection conn) {
-			 for (int i = 1; i < 10000; i++) {
+			 for (int i = 1; i <= 10000; i++) {
 
 					if (insertReviewer(i, "Name" + i, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
@@ -392,7 +392,7 @@ public class Schema4 {
 				}
 		 }
 		public static void populateGenres(Connection conn) {
-			 for (int i = 1; i < 10000; i++) {
+			 for (int i = 1; i <= 10000; i++) {
 
 					if (insertGenres(i, "Gnere" + i, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
@@ -402,7 +402,7 @@ public class Schema4 {
 				}
 		 }
 		public static void populateActor(Connection conn) {
-			 for (int i = 1; i < 10000; i++) {
+			 for (int i = 1; i <= 120000; i++) {
                      String result = "M";
                      if (i > 5000) 
                     	 result = "F";
@@ -414,7 +414,7 @@ public class Schema4 {
 				}
 		 }
 		public static void populateDirector(Connection conn) {
-			 for (int i = 1; i < 10000; i++) {
+			 for (int i = 1; i <= 6000; i++) {
                    
 					if (insertDirector(i, "Actor" + i,"Actor" + i, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
@@ -425,9 +425,9 @@ public class Schema4 {
 		 }
 		
 		public static void populateMovieDirection(Connection conn) {
-			 for (int i = 1; i < 10000; i++) {
+			 for (int i = 1; i <= 100000; i++) {
 
-					if (insertMovieDirection(i, i, conn) == 0) {
+					if (insertMovieDirection((i%6000)+1, i, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
 					} else
@@ -435,9 +435,9 @@ public class Schema4 {
 				}
 		 }
 		public static void populateMovieCast(Connection conn) {
-			 for (int i = 1; i < 10000; i++) {
+			 for (int i = 1; i <= 120000; i++) {
                   
-					if (insertMovieCast(i,  i,"Actor" + i, conn) == 0) {
+					if (insertMovieCast((i%100000)+1,  i,"Actor" + i, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
 					} else
@@ -446,9 +446,9 @@ public class Schema4 {
 		 }
 		
 		public static void populateMovieGenres(Connection conn) {
-			 for (int i = 1; i < 10000; i++) {
+			 for (int i = 1; i <= 100000; i++) {
 
-					if (insertMovieGenres(i, i, conn) == 0) {
+					if (insertMovieGenres(i, (i%10000)+1, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
 					} else
@@ -457,9 +457,9 @@ public class Schema4 {
 		 }
 		
 		public static void populateRating(Connection conn) {
-			 for (int i = 1; i < 10000; i++) {
+			 for (int i = 1; i <= 100000; i++) {
                     
-					if (insertRating(i, i, i,i, conn) == 0) {
+					if (insertRating(i, (i%10000)+1, (i%5)+1,(i%10000)+1, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
 					} else
