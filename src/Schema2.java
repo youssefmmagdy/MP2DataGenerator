@@ -262,36 +262,61 @@ public class Schema2 {
 	 /////////////////////////////////////////////// Data Population Methods //////////////////////////////////////////////////////////////
 	 @SuppressWarnings("deprecation")
 	public static void populateEmployee(Connection conn) {
-		 for (int i = 1; i <= 16000; i++) {
+		 int salary = 40000 , empNumber = 1 , dNumber = 5;
+         if (insertEmployee("Name" + 1, "M" + 1,"employee" + empNumber, 1, new Date(22,1,1999), "address" + 1
+                 ,"M",salary,1,5, conn) == 0) {
+             System.err.println("insertion of record " + 1 + " failed");
+
+         } else
+             System.out.println("insertion was successful");
+         int[] arr = {6,7,8,9,10};
+         for (int i = 2; i <= 16000; i++) {
                 String result = "M";
-                if (i > 5000) 
+                if (i > 600)
                 	result = "F";
-				if (insertEmployee("Employee" + i, "M" + i,"Employee" + i, i, new Date(22,1,1999), "address" + i
-                        ,result,i,i,i, conn) == 0) {
+                if(i > 600 && i <= 1200) {
+                    salary = 40010;
+                }else salary = 40000;
+//                dNumber = (i%150)+1;
+//                if(dNumber == 5)
+//                    dNumber = 6;
+                dNumber = arr[(int)(Math.random() * arr.length + 1)];
+                if(i > 600)
+                    empNumber = i;
+				if (insertEmployee("Name" + i, "M" + i,"employee" + empNumber, i, new Date(22,1,1999), "address" + i
+                        ,result,salary,i,dNumber, conn) == 0) {
 					System.err.println("insertion of record " + i + " failed");
 					break;
 				} else
 					System.out.println("insertion was successful");
-			}
-		 int i = 10000;
-			insertEmployee("Employee" + i, "M" + i,"Employee" + i, i, new Date(22,1,1999), "address" + i ,"M",i,i,1, conn);
-          i++;
-			insertEmployee("Employee" + i, "M" + i,"Employee" + i, i, new Date(22,1,1999), "address" + i ,"M",i,i,1, conn);
+         }
+//		 int i = 16001;
+//			insertEmployee("Employee" + i, "M" + i,"Employee" + i, i, new Date(22,1,1999), "address" + i ,"M",i,i,1, conn);
+//          i++;
+//			insertEmployee("Employee" + i, "M" + i,"Employee" + i, i, new Date(22,1,1999), "address" + i ,"M",i,i,1, conn);
 
 	 }
 	 
 	 @SuppressWarnings("deprecation")
 	public static void populateDepartment(Connection conn) {
+         int dnumber = 5;
+         int c = 0 , mgr = 700;
 		 for (int i = 1; i <= 150; i++) {
-				if (insertDepartment("Department" + i, i,i,new Date(1,1,1990), conn) == 0) {
+//             if(i > 100)
+                 dnumber = i;
+                 if(c < 7){
+                    mgr = 700;
+                 }else mgr = i+700;
+				if (insertDepartment("Department" + i, dnumber,mgr,new Date(1,1,1990), conn) == 0) {
 					System.err.println("insertion of record " + i + " failed");
 					break;
 				} else
 					System.out.println("insertion was successful");
-			}
+             c++;
+         }
 	 }
 		public static void populateDeptLocations(Connection conn) {
-			 for (int i = 1; i < 10000; i++) {
+			 for (int i = 1; i <= 150; i++) {
 					if (insertDeptLocations(i, "Location" + i, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
@@ -301,8 +326,9 @@ public class Schema2 {
 		 }
 		
 		public static void populateProject(Connection conn) {
-			 for (int i = 1; i < 10000; i++) {
-					if (insertProject("Project" + i, i,"Location1" + i,i, conn) == 0) {
+
+			 for (int i = 1; i <= 9200; i++) {
+					if (insertProject("Project" + i, i,"Location1" + i,(i%150)+1, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
 					} else
@@ -311,7 +337,7 @@ public class Schema2 {
 		 }
 		public static void populateWorksOn(Connection conn) {
 			 for (int i = 1; i < 10000; i++) {
-					if (insertWorksOn(i, i, i, conn) == 0) {
+					if (insertWorksOn(i, (i%9200)+1, i, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
 					} else
@@ -320,16 +346,16 @@ public class Schema2 {
 		 }
 		@SuppressWarnings("deprecation")
 		public static void populateDependent(Connection conn) {
-			 for (int i = 1; i < 10000; i++) {
-				 String result = "F";
-				 if (i > 5000) 
-					 result = "M";
-					if (insertDependent(i, "Name" + i, result,new Date(1,1,1999),"child", conn) == 0) {
-						System.err.println("insertion of record " + i + " failed");
-						break;
-					} else
-						System.out.println("insertion was successful");
-				}
+			 for (int i = 1; i <= 600; i++) {
+				 String result = "M";
+
+
+                if (insertDependent(i, "Name" + i, result,new Date(1,1,1999),"child", conn) == 0) {
+                    System.err.println("insertion of record " + i + " failed");
+                    break;
+                } else
+                    System.out.println("insertion was successful");
+            }
 		 }
 		
 		public static void insertSchema2(Connection connection) {
