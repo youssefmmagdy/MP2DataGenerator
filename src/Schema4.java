@@ -376,7 +376,7 @@ public class Schema4 {
              if (i<113){//Query 10
                  movietitle = "Annie Hall";
              }//Query 10
-             else if(i>=113 && i<90000){
+             else if(i>=113 && i<20000){
                  movietitle = "Eyes Wide Shut";
              }
              else{
@@ -426,9 +426,15 @@ public class Schema4 {
 				}
 		 }
 		public static void populateDirector(Connection conn) {
+
 			 for (int i = 1; i <= 6000; i++) {
-                   
-					if (insertDirector(i, "Actor" + i,"Actor" + i, conn) == 0) {
+                 String fname = "";
+                 String lname = "";
+                   if (i<22){
+                       fname =  "Woddy";
+                       lname = "Allen";
+                   }
+					if (insertDirector(i, fname,lname, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
 					} else
@@ -438,7 +444,6 @@ public class Schema4 {
 		
 		public static void populateMovieDirection(Connection conn) {
 			 for (int i = 1; i <= 100000; i++) {
-
 					if (insertMovieDirection((i%6000)+1, i, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
