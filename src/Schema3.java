@@ -131,7 +131,7 @@ public class Schema3 {
 	 
 	 ///////////////////////////////////////////////////////// Data Population Methods //////////////////////////////////////////////////////////
 	 public static void populateSailor(Connection conn) {
-		 for (int i = 1; i < 10000; i++) {
+		 for (int i = 1; i < 19001; i++) {
 				if (insertSailor(i, "Sailor" + i,i,i, conn) == 0) {
 					System.err.println("insertion of record " + i + " failed");
 					break;
@@ -139,25 +139,40 @@ public class Schema3 {
 					System.out.println("insertion was successful");
 			}
 	 }
-	 public static void populateBoat(Connection conn) {
-		 for (int i = 1; i < 10000; i++) {
-				if (insertBoat(i, "Boat" + i,"Red", conn) == 0) {
-					System.err.println("insertion of record " + i + " failed");
-					break;
-				} else
-					System.out.println("insertion was successful");
-			}
-	 }
-	 @SuppressWarnings("deprecation")
-	public static void populateReserves(Connection conn) {
-		 for (int i = 1; i < 10000; i++) {
-				if (insertReserves(i, i,new Date(1,1,1999), conn) == 0) {
-					System.err.println("insertion of record " + i + " failed");
-					break;
-				} else
-					System.out.println("insertion was successful");
-			}
-	 }
+    public static void populateBoat(Connection conn) {
+        for (int i = 1; i <= 3000; i++) {
+            String color;
+            if (i <= 200) {
+                color = "red";
+            } else if (i <= 400) {
+                color = "green";
+            } else {
+                color = "blue";
+            }
+            if (insertBoat(i, "Boat" + i, color, conn) == 0) {
+                System.err.println("insertion of record " + i + " failed");
+                break;
+            } else {
+                System.out.println("insertion was successful");
+            }
+        }
+    }
+
+
+    public static void populateReserves(Connection conn) {
+        for (int i = 1; i <= 35000; i++) {
+            for (int j = 1; j <= 2; j++) {
+                int boatId = ((i - 1) * 2 + j) % 3000 + 1;
+                if (insertReserves(i, boatId, new Date(1, 1, 1999), conn) == 0) {
+                    System.err.println("insertion of record " + i + " failed");
+                    break;
+                } else {
+                    System.out.println("insertion was successful");
+                }
+            }
+        }
+    }
+
 	 public static void insertSchema3(Connection connection) {
 			populateSailor(connection);
 			populateBoat(connection);
@@ -190,7 +205,7 @@ public class Schema3 {
 
 			connection = DriverManager.getConnection(
 					"jdbc:postgresql://127.0.0.1:5432/schema3", "postgres",
-					"YOUR PASSWORD");
+					"332004");
 
             insertSchema3(connection);
 		
