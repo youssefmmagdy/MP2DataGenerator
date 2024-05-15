@@ -371,9 +371,18 @@ public class Schema4 {
 	////////////////////////////////////////////////////////// Data Population Methods ////////////////////////////////////////////////////////// 
 	 @SuppressWarnings("deprecation")
 	public static void populateMovie(Connection conn) {
+         String movietitle = "";
 		 for (int i = 1; i <= 100000; i++) {
-
-				if (insertMovie(i, "Movie" + i,i, i, "EN", new Date(22,1,1999), "US", conn) == 0) {
+             if (i<113){//Query 10
+                 movietitle = "Annie Hall";
+             }//Query 10
+             else if(i>=113 && i<90000){
+                 movietitle = "Eyes Wide Shut";
+             }
+             else{
+                 movietitle = ""+i;
+             }
+				if (insertMovie(i, movietitle,i, i, "EN", new Date(22,1,1999), "US", conn) == 0) {
 					System.err.println("insertion of record " + i + " failed");
 					break;
 				} else
@@ -402,7 +411,10 @@ public class Schema4 {
 				}
 		 }
 		public static void populateActor(Connection conn) {
-			 for (int i = 1; i <= 120000; i++) {
+			 for (int i = 1; i <= 120001; i++) {
+                 if (i==80){ //Query 10
+                     continue;
+                 }
                      String result = "M";
                      if (i > 5000) 
                     	 result = "F";
@@ -435,9 +447,11 @@ public class Schema4 {
 				}
 		 }
 		public static void populateMovieCast(Connection conn) {
-			 for (int i = 1; i <= 120000; i++) {
-                  
-					if (insertMovieCast((i%100000)+1,  i,"Actor" + i, conn) == 0) {
+			 for (int i = 1; i <= 120001; i++) {
+                  if (i==80){ // Query 10
+                      continue;
+                  }//Query 10
+					if (insertMovieCast(  i,(i%100000)+1,"Actor" + i, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
 					} else
@@ -505,7 +519,7 @@ public class Schema4 {
 
 			connection = DriverManager.getConnection(
 					"jdbc:postgresql://127.0.0.1:5432/schema4", "postgres",
-					"YOUR PASSWORd");
+					"engybabe");
              insertSchema4(connection);
 
 

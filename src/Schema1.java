@@ -569,7 +569,7 @@ public class Schema1 {
 
 			connection = DriverManager.getConnection(
 					"jdbc:postgresql://127.0.0.1:5432/schema1", "postgres",
-					"");
+					"engybabe");
 			insertSchema1(connection);
 
 		} catch (SQLException e) {
