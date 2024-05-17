@@ -376,7 +376,7 @@ public class Schema4 {
              if (i<113){//Query 10
                  movietitle = "Annie Hall";
              }//Query 10
-             else if(i>=113 && i<20000){
+             else if(i<20000){
                  movietitle = "Eyes Wide Shut";
              }
              else{
@@ -430,20 +430,32 @@ public class Schema4 {
 			 for (int i = 1; i <= 6000; i++) {
                  String fname = "";
                  String lname = "";
-                   if (i<22){
+                 int counter  = 0;
+                   if (i==1){
                        fname =  "Woddy";
                        lname = "Allen";
                    }
 					if (insertDirector(i, fname,lname, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
-					} else
-						System.out.println("insertion was successful");
-				}
-		 }
+					} else {
+                        System.out.println("insertion was successful");
+
+                    }
+             }
+
+        }
 		
 		public static void populateMovieDirection(Connection conn) {
 			 for (int i = 1; i <= 100000; i++) {
+                 if (i<=334){
+                     if (insertMovieDirection(1, i, conn) == 0) {
+                         System.err.println("insertion of record " + i + " failed");
+                         break;
+                     } else
+                         System.out.println("insertion was successful");
+                     continue;
+                 }
 					if (insertMovieDirection((i%6000)+1, i, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
@@ -453,9 +465,9 @@ public class Schema4 {
 		 }
 		public static void populateMovieCast(Connection conn) {
 			 for (int i = 1; i <= 120001; i++) {
-                  if (i==80){ // Query 10
+                  if (i==80) {
                       continue;
-                  }//Query 10
+                  }// Query 10
 					if (insertMovieCast(  i,(i%100000)+1,"Actor" + i, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");
 						break;
@@ -524,7 +536,7 @@ public class Schema4 {
 
 			connection = DriverManager.getConnection(
 					"jdbc:postgresql://127.0.0.1:5432/schema4", "postgres",
-					"332004");
+					"engybabe");
              insertSchema4(connection);
 
 
