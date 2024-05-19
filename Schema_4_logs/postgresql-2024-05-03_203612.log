@@ -1,0 +1,4 @@
+2024-05-03 20:36:13.120 EEST [9576] LOG:  database system was shut down at 2024-05-03 20:35:25 EEST
+2024-05-03 20:36:13.268 EEST [9872] FATAL:  the database system is starting up
+2024-05-03 20:41:13.121 EEST [9536] LOG:  checkpoint starting: time
+2024-05-03 20:41:15.125 EEST [9536] LOG:  checkpoint complete: wrote 21 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.971 s, sync=0.020 s, total=2.005 s; sync files=17, longest=0.003 s, average=0.002 s; distance=91 kB, estimate=91 kB

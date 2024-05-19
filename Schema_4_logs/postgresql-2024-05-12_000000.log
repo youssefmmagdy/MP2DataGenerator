@@ -1,0 +1,183 @@
+2024-05-13 20:32:48.397 EEST [7392] ERROR:  parameter "log_destination" cannot be changed now
+2024-05-13 20:32:48.397 EEST [7392] STATEMENT:  SET log_destination TO 'csvlog';
+2024-05-13 21:17:34.594 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 21:17:36.627 EEST [8980] LOG:  checkpoint complete: wrote 19 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.990 s, sync=0.028 s, total=2.033 s; sync files=40, longest=0.002 s, average=0.001 s; distance=61 kB, estimate=86 kB
+2024-05-13 21:22:34.638 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 21:22:36.739 EEST [8980] LOG:  checkpoint complete: wrote 20 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.060 s, sync=0.026 s, total=2.102 s; sync files=27, longest=0.005 s, average=0.001 s; distance=51 kB, estimate=82 kB
+2024-05-13 22:22:34.845 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 22:25:33.166 EEST [12112] ERROR:  insert or update on table "movie_cast" violates foreign key constraint "movie_cast_mov_id_fkey"
+2024-05-13 22:25:33.166 EEST [12112] DETAIL:  Key (mov_id)=(100001) is not present in table "movie".
+2024-05-13 22:25:33.166 EEST [12112] STATEMENT:  INSERT INTO movie_cast(act_id,mov_id,role) VALUES($1,$2,$3)
+	RETURNING *
+2024-05-13 22:25:33.185 EEST [12112] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 22:25:33.185 EEST [12112] STATEMENT:  INSERT INTO movie_genres(mov_id,gen_id) VALUES($1,$2)
+	RETURNING *
+2024-05-13 22:25:33.188 EEST [12112] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 22:25:33.188 EEST [12112] STATEMENT:  INSERT INTO Rating(mov_id,rev_id,rev_stars,num_o_ratings) VALUES($1,$2,$3,$4)
+	RETURNING *
+2024-05-13 22:25:33.689 EEST [12112] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-13 22:26:37.019 EEST [8980] LOG:  checkpoint complete: wrote 2260 buffers (13.8%); 0 WAL file(s) added, 1 removed, 0 recycled; write=242.030 s, sync=0.043 s, total=242.175 s; sync files=35, longest=0.005 s, average=0.002 s; distance=28600 kB, estimate=28600 kB
+2024-05-13 22:37:34.040 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 22:37:36.081 EEST [8980] LOG:  checkpoint complete: wrote 30 buffers (0.2%); 0 WAL file(s) added, 0 removed, 7 recycled; write=1.964 s, sync=0.025 s, total=2.041 s; sync files=30, longest=0.004 s, average=0.001 s; distance=104790 kB, estimate=104790 kB
+2024-05-13 22:42:34.086 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 22:44:24.545 EEST [15104] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-13 22:47:04.207 EEST [8980] LOG:  checkpoint complete: wrote 6125 buffers (37.4%); 0 WAL file(s) added, 0 removed, 7 recycled; write=269.992 s, sync=0.041 s, total=270.121 s; sync files=43, longest=0.003 s, average=0.001 s; distance=121747 kB, estimate=121747 kB
+2024-05-13 22:48:53.971 EEST [8680] ERROR:  duplicate key value violates unique constraint "movie_pkey"
+2024-05-13 22:48:53.971 EEST [8680] DETAIL:  Key (mov_id)=(1) already exists.
+2024-05-13 22:48:53.971 EEST [8680] STATEMENT:  INSERT INTO Movie(mov_id,mov_title,mov_year,mov_time,mov_lang,mov_dt_rel,mov_rel_country) VALUES($1,$2,$3,$4,$5,$6,$7)
+	RETURNING *
+2024-05-13 22:48:54.000 EEST [8680] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 22:48:54.000 EEST [8680] STATEMENT:  INSERT INTO Reviewer(rev_id,rev_name) VALUES($1,$2)
+	RETURNING *
+2024-05-13 22:48:54.003 EEST [8680] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 22:48:54.003 EEST [8680] STATEMENT:  INSERT INTO Genres(gen_id,gen_title) VALUES($1,$2)
+	RETURNING *
+2024-05-13 22:48:54.005 EEST [8680] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 22:48:54.005 EEST [8680] STATEMENT:  INSERT INTO Actor(act_id,act_fname,act_lname,act_gender) VALUES($1,$2,$3,$4)
+	RETURNING *
+2024-05-13 22:48:54.007 EEST [8680] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 22:48:54.007 EEST [8680] STATEMENT:  INSERT INTO Director(dir_id,dir_fname,dir_lname) VALUES($1,$2,$3)
+	RETURNING *
+2024-05-13 22:48:54.010 EEST [8680] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 22:48:54.010 EEST [8680] STATEMENT:  INSERT INTO movie_direction(dir_id,mov_id) VALUES($1,$2)
+	RETURNING *
+2024-05-13 22:48:54.012 EEST [8680] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 22:48:54.012 EEST [8680] STATEMENT:  INSERT INTO movie_cast(act_id,mov_id,role) VALUES($1,$2,$3)
+	RETURNING *
+2024-05-13 22:48:54.014 EEST [8680] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 22:48:54.014 EEST [8680] STATEMENT:  INSERT INTO movie_genres(mov_id,gen_id) VALUES($1,$2)
+	RETURNING *
+2024-05-13 22:48:54.016 EEST [8680] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 22:48:54.016 EEST [8680] STATEMENT:  INSERT INTO Rating(mov_id,rev_id,rev_stars,num_o_ratings) VALUES($1,$2,$3,$4)
+	RETURNING *
+2024-05-13 22:48:54.515 EEST [8680] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-13 22:52:34.231 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 22:55:13.729 EEST [5724] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-13 22:57:04.171 EEST [8980] LOG:  checkpoint complete: wrote 4999 buffers (30.5%); 0 WAL file(s) added, 0 removed, 10 recycled; write=269.774 s, sync=0.052 s, total=269.940 s; sync files=46, longest=0.005 s, average=0.002 s; distance=166137 kB, estimate=166137 kB
+2024-05-13 23:07:34.217 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 23:07:36.150 EEST [8980] LOG:  checkpoint complete: wrote 28 buffers (0.2%); 0 WAL file(s) added, 0 removed, 7 recycled; write=1.859 s, sync=0.019 s, total=1.933 s; sync files=26, longest=0.002 s, average=0.001 s; distance=114865 kB, estimate=161010 kB
+2024-05-13 23:10:50.648 EEST [8420] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-13 23:12:34.172 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 23:16:05.787 EEST [19312] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-13 23:17:04.197 EEST [8980] LOG:  checkpoint complete: wrote 456 buffers (2.8%); 0 WAL file(s) added, 0 removed, 6 recycled; write=269.860 s, sync=0.024 s, total=270.025 s; sync files=37, longest=0.003 s, average=0.001 s; distance=90354 kB, estimate=153945 kB
+2024-05-13 23:21:19.656 EEST [19412] ERROR:  insert or update on table "movie_cast" violates foreign key constraint "movie_cast_act_id_fkey"
+2024-05-13 23:21:19.656 EEST [19412] DETAIL:  Key (act_id)=(80) is not present in table "actor".
+2024-05-13 23:21:19.656 EEST [19412] STATEMENT:  INSERT INTO movie_cast(act_id,mov_id,role) VALUES($1,$2,$3)
+	RETURNING *
+2024-05-13 23:21:20.161 EEST [19412] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-13 23:22:34.206 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 23:27:04.175 EEST [8980] LOG:  checkpoint complete: wrote 1854 buffers (11.3%); 0 WAL file(s) added, 0 removed, 9 recycled; write=269.788 s, sync=0.055 s, total=269.969 s; sync files=47, longest=0.005 s, average=0.002 s; distance=143756 kB, estimate=152926 kB
+2024-05-13 23:27:34.176 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 23:27:53.788 EEST [14488] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-13 23:32:04.103 EEST [8980] LOG:  checkpoint complete: wrote 4640 buffers (28.3%); 0 WAL file(s) added, 0 removed, 4 recycled; write=269.823 s, sync=0.024 s, total=269.928 s; sync files=20, longest=0.005 s, average=0.002 s; distance=78850 kB, estimate=145518 kB
+2024-05-13 23:37:34.115 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 23:37:36.127 EEST [8980] LOG:  checkpoint complete: wrote 21 buffers (0.1%); 0 WAL file(s) added, 0 removed, 2 recycled; write=1.959 s, sync=0.019 s, total=2.013 s; sync files=25, longest=0.003 s, average=0.001 s; distance=20319 kB, estimate=132998 kB
+2024-05-13 23:39:42.033 EEST [9220] ERROR:  insert or update on table "movie_cast" violates foreign key constraint "movie_cast_act_id_fkey"
+2024-05-13 23:39:42.033 EEST [9220] DETAIL:  Key (act_id)=(1) is not present in table "actor".
+2024-05-13 23:39:42.033 EEST [9220] STATEMENT:  INSERT INTO movie_cast(act_id,mov_id,role) VALUES($1,$2,$3)
+	RETURNING *
+2024-05-13 23:39:42.537 EEST [9220] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-13 23:42:34.142 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 23:47:04.220 EEST [8980] LOG:  checkpoint complete: wrote 1169 buffers (7.1%); 0 WAL file(s) added, 0 removed, 3 recycled; write=269.919 s, sync=0.078 s, total=270.078 s; sync files=46, longest=0.005 s, average=0.002 s; distance=58578 kB, estimate=125556 kB
+2024-05-13 23:47:34.236 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 23:49:59.547 EEST [5380] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-13 23:52:04.189 EEST [8980] LOG:  checkpoint complete: wrote 5328 buffers (32.5%); 0 WAL file(s) added, 0 removed, 6 recycled; write=269.813 s, sync=0.042 s, total=269.954 s; sync files=45, longest=0.003 s, average=0.001 s; distance=99616 kB, estimate=122962 kB
+2024-05-13 23:52:34.194 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 23:53:24.949 EEST [8980] LOG:  checkpoint complete: wrote 487 buffers (3.0%); 0 WAL file(s) added, 0 removed, 7 recycled; write=50.594 s, sync=0.035 s, total=50.755 s; sync files=29, longest=0.003 s, average=0.002 s; distance=109198 kB, estimate=121586 kB
+2024-05-13 23:57:34.957 EEST [8980] LOG:  checkpoint starting: time
+2024-05-13 23:58:03.801 EEST [10100] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-13 23:59:45.917 EEST [1532] ERROR:  duplicate key value violates unique constraint "movie_pkey"
+2024-05-13 23:59:45.917 EEST [1532] DETAIL:  Key (mov_id)=(1) already exists.
+2024-05-13 23:59:45.917 EEST [1532] STATEMENT:  INSERT INTO Movie(mov_id,mov_title,mov_year,mov_time,mov_lang,mov_dt_rel,mov_rel_country) VALUES($1,$2,$3,$4,$5,$6,$7)
+	RETURNING *
+2024-05-13 23:59:45.947 EEST [1532] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 23:59:45.947 EEST [1532] STATEMENT:  INSERT INTO Reviewer(rev_id,rev_name) VALUES($1,$2)
+	RETURNING *
+2024-05-13 23:59:45.949 EEST [1532] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 23:59:45.949 EEST [1532] STATEMENT:  INSERT INTO Genres(gen_id,gen_title) VALUES($1,$2)
+	RETURNING *
+2024-05-13 23:59:45.952 EEST [1532] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 23:59:45.952 EEST [1532] STATEMENT:  INSERT INTO Actor(act_id,act_fname,act_lname,act_gender) VALUES($1,$2,$3,$4)
+	RETURNING *
+2024-05-13 23:59:45.954 EEST [1532] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 23:59:45.954 EEST [1532] STATEMENT:  INSERT INTO Director(dir_id,dir_fname,dir_lname) VALUES($1,$2,$3)
+	RETURNING *
+2024-05-13 23:59:45.957 EEST [1532] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 23:59:45.957 EEST [1532] STATEMENT:  INSERT INTO movie_direction(dir_id,mov_id) VALUES($1,$2)
+	RETURNING *
+2024-05-13 23:59:45.960 EEST [1532] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 23:59:45.960 EEST [1532] STATEMENT:  INSERT INTO movie_cast(act_id,mov_id,role) VALUES($1,$2,$3)
+	RETURNING *
+2024-05-13 23:59:45.963 EEST [1532] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 23:59:45.963 EEST [1532] STATEMENT:  INSERT INTO movie_genres(mov_id,gen_id) VALUES($1,$2)
+	RETURNING *
+2024-05-13 23:59:45.965 EEST [1532] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-13 23:59:45.965 EEST [1532] STATEMENT:  INSERT INTO Rating(mov_id,rev_id,rev_stars,num_o_ratings) VALUES($1,$2,$3,$4)
+	RETURNING *
+2024-05-13 23:59:46.462 EEST [1532] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-14 00:02:04.220 EEST [8980] LOG:  checkpoint complete: wrote 3861 buffers (23.6%); 0 WAL file(s) added, 0 removed, 10 recycled; write=269.081 s, sync=0.062 s, total=269.264 s; sync files=47, longest=0.003 s, average=0.002 s; distance=162149 kB, estimate=162149 kB
+2024-05-14 00:02:34.224 EEST [8980] LOG:  checkpoint starting: time
+2024-05-14 00:05:31.480 EEST [12064] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-14 00:07:04.151 EEST [8980] LOG:  checkpoint complete: wrote 4324 buffers (26.4%); 0 WAL file(s) added, 0 removed, 6 recycled; write=269.775 s, sync=0.051 s, total=269.927 s; sync files=42, longest=0.004 s, average=0.002 s; distance=94010 kB, estimate=155335 kB
+2024-05-14 00:07:38.261 EEST [15452] ERROR:  duplicate key value violates unique constraint "movie_pkey"
+2024-05-14 00:07:38.261 EEST [15452] DETAIL:  Key (mov_id)=(1) already exists.
+2024-05-14 00:07:38.261 EEST [15452] STATEMENT:  INSERT INTO Movie(mov_id,mov_title,mov_year,mov_time,mov_lang,mov_dt_rel,mov_rel_country) VALUES($1,$2,$3,$4,$5,$6,$7)
+	RETURNING *
+2024-05-14 00:07:38.284 EEST [15452] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-14 00:07:38.284 EEST [15452] STATEMENT:  INSERT INTO Reviewer(rev_id,rev_name) VALUES($1,$2)
+	RETURNING *
+2024-05-14 00:07:38.287 EEST [15452] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-14 00:07:38.287 EEST [15452] STATEMENT:  INSERT INTO Genres(gen_id,gen_title) VALUES($1,$2)
+	RETURNING *
+2024-05-14 00:07:38.290 EEST [15452] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-14 00:07:38.290 EEST [15452] STATEMENT:  INSERT INTO Actor(act_id,act_fname,act_lname,act_gender) VALUES($1,$2,$3,$4)
+	RETURNING *
+2024-05-14 00:07:38.293 EEST [15452] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-14 00:07:38.293 EEST [15452] STATEMENT:  INSERT INTO Director(dir_id,dir_fname,dir_lname) VALUES($1,$2,$3)
+	RETURNING *
+2024-05-14 00:07:38.295 EEST [15452] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-14 00:07:38.295 EEST [15452] STATEMENT:  INSERT INTO movie_direction(dir_id,mov_id) VALUES($1,$2)
+	RETURNING *
+2024-05-14 00:07:38.298 EEST [15452] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-14 00:07:38.298 EEST [15452] STATEMENT:  INSERT INTO movie_cast(act_id,mov_id,role) VALUES($1,$2,$3)
+	RETURNING *
+2024-05-14 00:07:38.300 EEST [15452] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-14 00:07:38.300 EEST [15452] STATEMENT:  INSERT INTO movie_genres(mov_id,gen_id) VALUES($1,$2)
+	RETURNING *
+2024-05-14 00:07:38.303 EEST [15452] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-14 00:07:38.303 EEST [15452] STATEMENT:  INSERT INTO Rating(mov_id,rev_id,rev_stars,num_o_ratings) VALUES($1,$2,$3,$4)
+	RETURNING *
+2024-05-14 00:07:38.796 EEST [15452] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-14 00:12:34.166 EEST [8980] LOG:  checkpoint starting: time
+2024-05-14 00:12:43.334 EEST [7032] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-14 00:17:04.269 EEST [8980] LOG:  checkpoint complete: wrote 7595 buffers (46.4%); 0 WAL file(s) added, 0 removed, 19 recycled; write=269.911 s, sync=0.055 s, total=270.103 s; sync files=43, longest=0.005 s, average=0.002 s; distance=312190 kB, estimate=312190 kB

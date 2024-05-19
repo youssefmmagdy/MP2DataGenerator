@@ -1,0 +1,20 @@
+2024-05-18 00:12:53.867 EEST,,,6692,,6647c855.1a24,1,,2024-05-18 00:12:53 EEST,,0,LOG,00000,"database system was shut down at 2024-05-18 00:05:42 EEST",,,,,,,,,"","startup",,0
+2024-05-18 00:17:53.910 EEST,,,7184,,6647c855.1c10,1,,2024-05-18 00:12:53 EEST,,0,LOG,00000,"checkpoint starting: time",,,,,,,,,"","checkpointer",,0
+2024-05-18 00:17:55.918 EEST,,,7184,,6647c855.1c10,2,,2024-05-18 00:12:53 EEST,,0,LOG,00000,"checkpoint complete: wrote 21 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.970 s, sync=0.025 s, total=2.008 s; sync files=17, longest=0.005 s, average=0.002 s; distance=91 kB, estimate=91 kB",,,,,,,,,"","checkpointer",,0
+2024-05-18 15:38:18.070 EEST,,,7184,,6647c855.1c10,3,,2024-05-18 00:12:53 EEST,,0,LOG,00000,"checkpoint starting: time",,,,,,,,,"","checkpointer",,0
+2024-05-18 15:38:18.630 EEST,,,7184,,6647c855.1c10,4,,2024-05-18 00:12:53 EEST,,0,LOG,00000,"checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.544 s, sync=0.004 s, total=0.561 s; sync files=4, longest=0.002 s, average=0.001 s; distance=7 kB, estimate=83 kB",,,,,,,,,"","checkpointer",,0
+2024-05-18 23:45:26.358 EEST,"postgres","schema4",19076,"::1:58547",66491314.4a84,1,"",2024-05-18 23:44:04 EEST,8/0,0,LOG,08006,"could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+",,,,,,,,,"pgAdmin 4 - DB:schema4","client backend",,0
+2024-05-18 23:45:26.359 EEST,"postgres","schema2",18916,"::1:58545",66491314.49e4,1,"",2024-05-18 23:44:04 EEST,6/0,0,LOG,08006,"could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+",,,,,,,,,"pgAdmin 4 - DB:schema2","client backend",,0
+2024-05-18 23:45:26.359 EEST,"postgres","schema1",18844,"::1:58544",66491314.499c,1,"",2024-05-18 23:44:04 EEST,5/0,0,LOG,08006,"could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+",,,,,,,,,"pgAdmin 4 - DB:schema1","client backend",,0
+2024-05-18 23:45:26.360 EEST,"postgres","schema3",18996,"::1:58546",66491314.4a34,1,"",2024-05-18 23:44:04 EEST,7/0,0,LOG,08006,"could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+",,,,,,,,,"pgAdmin 4 - DB:schema3","client backend",,0
+2024-05-18 23:45:26.360 EEST,"postgres","postgres",18796,"::1:58543",66491314.496c,1,"",2024-05-18 23:44:04 EEST,4/0,0,LOG,08006,"could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+",,,,,,,,,"pgAdmin 4 - DB:postgres","client backend",,0

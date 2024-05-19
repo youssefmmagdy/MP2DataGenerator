@@ -1,0 +1,11 @@
+2024-05-03 18:13:57.601 EEST [11260] LOG:  database system was shut down at 2024-05-03 18:13:46 EEST
+2024-05-03 18:18:57.603 EEST [9272] LOG:  checkpoint starting: time
+2024-05-03 18:19:05.260 EEST [9272] LOG:  checkpoint complete: wrote 73 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=7.607 s, sync=0.040 s, total=7.657 s; sync files=31, longest=0.004 s, average=0.002 s; distance=394 kB, estimate=394 kB
+2024-05-03 19:01:50.756 EEST [7844] ERROR:  schema "pgagent" does not exist
+2024-05-03 19:01:50.756 EEST [7844] STATEMENT:  SELECT has_schema_privilege('pgagent', 'USAGE')
+2024-05-03 19:03:57.298 EEST [9272] LOG:  checkpoint starting: time
+2024-05-03 19:04:13.554 EEST [9272] LOG:  checkpoint complete: wrote 150 buffers (0.9%); 0 WAL file(s) added, 0 removed, 0 recycled; write=16.159 s, sync=0.087 s, total=16.257 s; sync files=109, longest=0.006 s, average=0.001 s; distance=603 kB, estimate=603 kB
+2024-05-03 19:05:09.447 EEST [7208] FATAL:  terminating connection due to administrator command
+2024-05-03 19:05:09.456 EEST [9272] LOG:  shutting down
+2024-05-03 19:05:09.457 EEST [9272] LOG:  checkpoint starting: shutdown immediate
+2024-05-03 19:05:09.469 EEST [9272] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.014 s; sync files=1, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=543 kB

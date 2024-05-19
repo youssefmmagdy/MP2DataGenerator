@@ -1,0 +1,35 @@
+2024-05-14 15:12:35.885 EEST [8980] LOG:  checkpoint starting: time
+2024-05-14 15:12:38.363 EEST [8980] LOG:  checkpoint complete: wrote 25 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.433 s, sync=0.015 s, total=2.479 s; sync files=26, longest=0.001 s, average=0.001 s; distance=9647 kB, estimate=281936 kB
+2024-05-14 19:47:48.179 EEST [8980] LOG:  checkpoint starting: time
+2024-05-14 19:47:48.964 EEST [8980] LOG:  checkpoint complete: wrote 7 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.767 s, sync=0.004 s, total=0.785 s; sync files=3, longest=0.002 s, average=0.002 s; distance=25 kB, estimate=253744 kB
+2024-05-14 19:57:48.981 EEST [8980] LOG:  checkpoint starting: time
+2024-05-14 19:58:25.158 EEST [20972] ERROR:  insert or update on table "movie_direction" violates foreign key constraint "movie_direction_mov_id_fkey"
+2024-05-14 19:58:25.158 EEST [20972] DETAIL:  Key (mov_id)=(100001) is not present in table "movie".
+2024-05-14 19:58:25.158 EEST [20972] STATEMENT:  INSERT INTO movie_direction(dir_id,mov_id) VALUES($1,$2)
+	RETURNING *
+2024-05-14 19:58:25.177 EEST [20972] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-14 19:58:25.177 EEST [20972] STATEMENT:  INSERT INTO movie_cast(act_id,mov_id,role) VALUES($1,$2,$3)
+	RETURNING *
+2024-05-14 19:58:25.178 EEST [20972] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-14 19:58:25.178 EEST [20972] STATEMENT:  INSERT INTO movie_genres(mov_id,gen_id) VALUES($1,$2)
+	RETURNING *
+2024-05-14 19:58:25.180 EEST [20972] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2024-05-14 19:58:25.180 EEST [20972] STATEMENT:  INSERT INTO Rating(mov_id,rev_id,rev_stars,num_o_ratings) VALUES($1,$2,$3,$4)
+	RETURNING *
+2024-05-14 19:58:25.662 EEST [20972] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-14 20:02:18.253 EEST [8980] LOG:  checkpoint complete: wrote 3492 buffers (21.3%); 0 WAL file(s) added, 0 removed, 5 recycled; write=269.103 s, sync=0.050 s, total=269.272 s; sync files=46, longest=0.005 s, average=0.002 s; distance=69227 kB, estimate=235293 kB
+2024-05-14 20:02:48.258 EEST [8980] LOG:  checkpoint starting: time
+2024-05-14 20:04:41.754 EEST [4404] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-14 20:07:11.000 EEST [8980] LOG:  checkpoint complete: wrote 2447 buffers (14.9%); 0 WAL file(s) added, 0 removed, 3 recycled; write=262.644 s, sync=0.020 s, total=262.743 s; sync files=20, longest=0.002 s, average=0.001 s; distance=60585 kB, estimate=217822 kB
+2024-05-14 20:09:12.051 EEST [12600] ERROR:  syntax error at or near ")" at character 58
+2024-05-14 20:09:12.051 EEST [12600] STATEMENT:  select mov_id
+	from movie
+	where
+	mov_title='Eyes
+	Wide Shut'))));
+2024-05-14 20:12:48.012 EEST [8980] LOG:  checkpoint starting: time
+2024-05-14 20:17:18.149 EEST [8980] LOG:  checkpoint complete: wrote 3145 buffers (19.2%); 0 WAL file(s) added, 0 removed, 5 recycled; write=270.074 s, sync=0.017 s, total=270.138 s; sync files=13, longest=0.004 s, average=0.002 s; distance=75131 kB, estimate=203553 kB

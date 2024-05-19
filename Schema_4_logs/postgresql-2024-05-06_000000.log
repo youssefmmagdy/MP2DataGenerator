@@ -1,0 +1,5 @@
+2024-05-08 23:43:37.351 EEST [12252] FATAL:  terminating connection due to administrator command
+2024-05-08 23:43:37.392 EEST [10000] ERROR:  canceling statement due to user request
+2024-05-08 23:43:37.437 EEST [9536] LOG:  shutting down
+2024-05-08 23:43:37.450 EEST [9536] LOG:  checkpoint starting: shutdown immediate
+2024-05-08 23:43:38.833 EEST [9536] LOG:  checkpoint complete: wrote 439 buffers (2.7%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.625 s, sync=0.680 s, total=1.397 s; sync files=43, longest=0.086 s, average=0.016 s; distance=10669 kB, estimate=16630 kB

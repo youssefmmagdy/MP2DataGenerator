@@ -1,0 +1,10 @@
+2024-05-10 21:30:49.438 EEST [528] FATAL:  the database system is starting up
+2024-05-10 21:30:49.459 EEST [9112] LOG:  database system was interrupted; last known up at 2024-05-09 15:35:42 EEST
+2024-05-10 21:30:51.918 EEST [9112] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-05-10 21:30:51.930 EEST [9112] LOG:  redo starts at 0/3193978
+2024-05-10 21:30:51.931 EEST [9112] LOG:  invalid record length at 0/3193A60: wanted 24, got 0
+2024-05-10 21:30:51.931 EEST [9112] LOG:  redo done at 0/3193A28 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2024-05-10 21:30:51.945 EEST [8980] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-05-10 21:30:51.959 EEST [8980] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.002 s, total=0.016 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB
+2024-05-10 21:35:51.972 EEST [8980] LOG:  checkpoint starting: time
+2024-05-10 21:35:53.983 EEST [8980] LOG:  checkpoint complete: wrote 19 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.980 s, sync=0.015 s, total=2.012 s; sync files=16, longest=0.003 s, average=0.001 s; distance=89 kB, estimate=89 kB

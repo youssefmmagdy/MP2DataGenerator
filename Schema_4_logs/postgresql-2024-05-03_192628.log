@@ -1,0 +1,13 @@
+2024-05-03 19:26:28.487 EEST [8452] LOG:  database system was shut down at 2024-05-03 19:18:35 EEST
+2024-05-03 19:31:28.588 EEST [9352] LOG:  checkpoint starting: time
+2024-05-03 19:31:29.724 EEST [9352] LOG:  checkpoint complete: wrote 13 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.110 s, sync=0.009 s, total=1.137 s; sync files=8, longest=0.002 s, average=0.002 s; distance=22 kB, estimate=22 kB
+2024-05-03 19:39:52.092 EEST [1712] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-03 19:51:07.610 EEST [10296] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-03 20:35:25.840 EEST [7968] ERROR:  canceling statement due to user request
+2024-05-03 20:35:25.853 EEST [9352] LOG:  shutting down
+2024-05-03 20:35:25.855 EEST [9352] LOG:  checkpoint starting: shutdown immediate
+2024-05-03 20:35:25.871 EEST [9352] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.003 s, total=0.018 s; sync files=3, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=20 kB

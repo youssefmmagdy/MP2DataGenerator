@@ -1,0 +1,34 @@
+2024-05-06 20:46:21.191 EEST [2372] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-06 20:46:24.165 EEST [2384] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-07 16:20:03.573 EEST [6956] ERROR:  syntax error at or near "sudo" at character 1
+2024-05-07 16:20:03.573 EEST [6956] STATEMENT:  sudo -u postgres psql;
+2024-05-07 16:20:55.955 EEST [9536] LOG:  checkpoint starting: time
+2024-05-07 16:25:05.198 EEST [6156] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-07 16:25:26.100 EEST [9536] LOG:  checkpoint complete: wrote 3725 buffers (22.7%); 0 WAL file(s) added, 0 removed, 1 recycled; write=269.101 s, sync=1.000 s, total=270.146 s; sync files=1267, longest=0.004 s, average=0.001 s; distance=17292 kB, estimate=17292 kB
+2024-05-07 17:42:38.917 EEST [17228] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-07 17:42:38.917 EEST [14536] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-07 17:42:38.917 EEST [17252] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-07 17:42:38.918 EEST [11800] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-07 17:42:38.919 EEST [17084] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-07 17:42:38.959 EEST [8644] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	
+2024-05-07 17:42:42.056 EEST [12000] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+
+	

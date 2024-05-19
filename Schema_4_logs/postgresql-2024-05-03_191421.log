@@ -1,0 +1,6 @@
+2024-05-03 19:14:22.601 EEST [9300] LOG:  database system was shut down at 2024-05-03 19:13:38 EEST
+2024-05-03 19:14:22.692 EEST [9472] FATAL:  the database system is starting up
+2024-05-03 19:18:35.780 EEST [8240] FATAL:  terminating connection due to administrator command
+2024-05-03 19:18:35.788 EEST [9268] LOG:  shutting down
+2024-05-03 19:18:35.790 EEST [9268] LOG:  checkpoint starting: shutdown immediate
+2024-05-03 19:18:35.842 EEST [9268] LOG:  checkpoint complete: wrote 32 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.019 s, sync=0.024 s, total=0.054 s; sync files=24, longest=0.005 s, average=0.001 s; distance=102 kB, estimate=102 kB
