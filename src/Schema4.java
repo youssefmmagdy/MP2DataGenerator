@@ -434,6 +434,9 @@ public class Schema4 {
                    if (i==1){
                        fname =  "Woddy";
                        lname = "Allen";
+                   }else{
+                       fname = "Director" + i;
+                       lname = "Director" + i;
                    }
 					if (insertDirector(i, fname,lname, conn) == 0) {
 						System.err.println("insertion of record " + i + " failed");

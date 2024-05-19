@@ -285,7 +285,7 @@ public class Schema2 {
 //                dNumber = (i%150)+1;
 //                if(dNumber == 5)
 //                    dNumber = 6;
-            if(i < 700)
+            if(i < 800)
                 dNumber = arr[(i%100)];
             else dNumber = 7;
             if(i > 600)

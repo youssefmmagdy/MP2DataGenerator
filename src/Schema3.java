@@ -131,7 +131,7 @@ public class Schema3 {
 	 
 	 ///////////////////////////////////////////////////////// Data Population Methods //////////////////////////////////////////////////////////
 	 public static void populateSailor(Connection conn) {
-		 for (int i = 1; i < 19001; i++) {
+		 for (int i = 1; i <= 19000; i++) {
 				if (insertSailor(i, "Sailor" + i,i,i, conn) == 0) {
 					System.err.println("insertion of record " + i + " failed");
 					break;
@@ -160,10 +160,28 @@ public class Schema3 {
 
 
     public static void populateReserves(Connection conn) {
-        for (int i = 1; i <= 35000; i++) {
-            for (int j = 1; j <= 2; j++) {
-                int boatId = ((i - 1) * 2 + j) % 3000 + 1;
-                if (insertReserves(i, boatId, new Date(1, 1, 1999), conn) == 0) {
+         int tmp;
+        for (int i = 1; i <= 34800; i++) {
+            if(i <= 200) {
+                if (insertReserves(i, i, new Date(1, 1, 1999), conn) == 0) {
+                    System.err.println("insertion of record " + i + " failed");
+                    break;
+                } else {
+                    System.out.println("insertion was successful");
+                }
+            }
+            if(i <= 200) {
+                if (insertReserves(i, i+200, new Date(1, 1, 1999), conn) == 0) {
+                    System.err.println("insertion of record " + i + " failed");
+                    break;
+                } else {
+                    System.out.println("insertion was successful");
+                }
+            }else {
+                if(i <= 400)
+                    tmp = 103;
+                else tmp = (i%2600)+1+400;
+                if (insertReserves((i%19000)+1, tmp, new Date(1, 1, 1999), conn) == 0) {
                     System.err.println("insertion of record " + i + " failed");
                     break;
                 } else {
